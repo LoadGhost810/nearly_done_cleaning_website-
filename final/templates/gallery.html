@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Cleaning Furniture</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+</head>
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- Nav bar -->
+            <header>
+                <div class="font-effect-shadow-multiple">Cleaning Furniture</div>
+                <ul class="nav-links">
+                    <li><a class="home" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                    <li><a href="{{ url_for('booking') }}">Booking</a></li>
+                {% if 'username' in session %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('account') }}">My Account</a></li>
+                {% else %}
+                    <li><a class="home" href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </header>
+            <!-- Nav bar end -->
+            
+            <!-- Gallery Content -->
+            <section class="home-content">
+                <h2>Gallery</h2>
+                <p>Check out our gallery of cleaning projects.</p>
+                <!-- Gallery items would go here -->
+            </section>
+            <!-- Gallery Content end -->
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            &copy; 2024 Cleaning Furniture. All rights reserved.
+        </footer>
+        <!-- Footer end -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+        
+            burger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+        </script>
+        </body>
+</html>

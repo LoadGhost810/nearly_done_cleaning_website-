@@ -1,0 +1,397 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Header styles */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    transition: 0.9s;
+    background-color: transparent;
+    z-index: 1000;
+}
+header.scrolled {
+    background-color: #333;
+}
+
+.font-effect-shadow-multiple {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #ff6d50;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+/* Banner styles */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('https://sarayeabrisham.com/wp-content/uploads/2021/04/2-min-3.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+}
+
+/* Footer styles */
+#footer {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    position: relative;
+    width: 100%;
+}
+
+/* Contact Us styles */
+.contact_us {
+    background-color: #0e0d0d;
+    color: white;
+    font-size: 18px;
+    padding: 10%;
+    margin: 3%;
+}
+
+/* Form styles */
+.form-container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(#212121, #212121) padding-box, linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-container .form-group label {
+    margin-bottom: 5px;
+    color: #717171;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.form-container .form-group input,
+.form-container .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #414141;
+}
+
+.form-container .form-group input:focus,
+.form-container .form-group textarea:focus {
+    outline: none;
+    border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #717171;
+    width: 100%;
+    background: #313131;
+    border: 1px solid #414141;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/* Button styles */
+.button-64 {
+    background-color: transparent;
+    align-items: center;
+    border: 0;
+    border-radius: 2px;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 20px; /* Same font size */
+    justify-content: center;
+    max-width: 50%;
+    min-width: 80px;
+    padding: 3px; /* Same padding */
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+    transition: background 0.3s ease;
+}
+
+.button-64:hover {
+    transition: 0.9s;
+background-color: #313131;}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+  header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        /* Responsive Banner */
+        .banner {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 24px;
+        }
+
+        /* Responsive Form */
+        .home-content {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 24px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-submit-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        select{
+            /* make style look like form-group */
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            border: 1px solid #414141;
+            border-radius: 4px;
+            background-color: transparent;
+            color: white;
+
+            
+
+        }
+        .lnk,.lnk a{
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 8px;
+            font-size: 30px;
+        
+        }
+        .lnk a:hover{
+            color: #414141;
+            }
+        
+        h1 {font-family: "Audiowide", sans-serif;}
+h2, .lnk a{font-family: "Sofia", sans-serif;}
+a {font-family: "Trirong", serif;}
+
+/* sign in and login css */
+/* Styles for form sections */
+
+.lnk a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.lnk a.active {
+    color: #007bff; /* Change this to whatever color you prefer */
+    font-weight: bold;
+    border-bottom: 1px solid #007bff;
+}
+
+/* Optional styles for the form container */
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-submit-btn:hover {
+    background-color: #0056b3;
+}
+.alert {
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.hidden {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+/* my account */
+.account-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background:#333;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition-duration: .5s;
+
+  }
+  .account-container li{
+    list-style: none;
+  }
+  .profileImage {
+    background: linear-gradient(to right,rgb(54, 54, 54),rgb(32, 32, 32));
+    margin-top: 20px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.329);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+
+  }
+      
+  .profile {
+    font-size: 0.84em;
+    color: rgb(194, 194, 194);
+    letter-spacing: 0.2px;
+    padding: 50px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+make my buger hide

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Nav Bar</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+
+
+</head>
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- Nav bar -->
+            <header>
+                <div class="font-effect-shadow-multiple">Cleaning Furniture</div>
+                <ul class="nav-links">
+                    <li><a class="home" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                    <li><a href="{{ url_for('booking') }}">Booking</a></li>
+                {% if 'username' in session %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('account') }}">My Account</a></li>
+                {% else %}
+                    <li><a class="home" href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </header>
+            <!-- Nav bar end -->
+        
+            <!-- Form Section -->
+<br><br><br>
+             <center>
+            <div class="form-container">
+                <form class="form" action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <input type="hidden" name="access_key" value="8488c810-c5c0-43cf-b9cd-7ce4605f66f6">
+                                        <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone No.</label>
+                        <input type="text" id="phone" name="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea">How Can We Help You?</label>
+                        <textarea name="Message" id="textarea" rows="10" cols="50" required></textarea>
+                    </div>
+                    <button class="form-submit-btn" type="submit">Submit</button>
+                </form>
+            </div>                
+             </center>
+
+            <!-- Form Section End -->
+
+        </div>
+        <!-- contact us -->
+               <div class="contact_us">
+            <div>
+                <h1>Contact Us</h1>
+                <p>Our company is located in the heart of the city. We are always ready to help you with your cleaning needs. We are open 24/7. You can contact us by phone or email. We will be happy to answer all your questions.</p>
+            </div>
+            <div><br><hr><br>
+                <h1>Our Address</h2>
+                <p>123 Main St, South Africa, SA 2194</p><br>
+                <hr><br>
+                <h1>Our Phone</h2>
+                <p>(123) 456-7890</p>
+                <br><hr><br>
+                <h1>Our Email</h2>
+                <p>info@cleaningfurniture.com</p>
+            </div>
+            <div>
+                <br>
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe style="right:0%; width:100%; height:100%;" id="gmap_canvas" src="https://maps.google.com/maps?q=Knights+Ave,+Randburg,+2194,+South Africa=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://www.analarmclock.com"></a><br><a href="https://www.onclock.net"></a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+            &copy; 2024 Cleaning Furniture. All rights reserved.
+        </footer>
+        <!-- Footer end -->
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+        
+            burger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        // nav bar ending js
+    </script>
+</body>
+</html>
